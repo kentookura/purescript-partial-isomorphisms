@@ -11,7 +11,7 @@ instance semigroupoidIso :: Semigroupoid Iso where
   compose g f = Iso (apply f >=> apply g) (unapply g >=> unapply f)
 
 instance categoryIso :: Category Iso where
-  id = Iso Just Just
+  identity = Iso Just Just
 
 
 inverse :: forall a b. Iso a b -> Iso b a

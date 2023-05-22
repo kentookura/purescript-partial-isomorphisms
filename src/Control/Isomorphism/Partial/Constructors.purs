@@ -56,4 +56,4 @@ nothing = Iso (const $ Just Nothing) g
     _ -> Nothing
 
 just :: forall a. Iso a (Maybe a)
-just = Iso (Just <<< Just) id
+just = Iso (Just <<< Just) identity

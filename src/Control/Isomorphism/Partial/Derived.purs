@@ -11,10 +11,10 @@ import Data.Tuple (Tuple)
 foldl :: forall a b. Iso (Tuple a b) a -> Iso (Tuple a (List b)) a
 foldl i =
   inverse unit
-    <<< (id *** inverse nil)
+    <<< (identity *** inverse nil)
     <<< iterate (step i)
   where
   step i' =
-    (i' *** id)
+    (i' *** identity)
       <<< associate
-      <<< (id *** inverse cons)
+      <<< (identity *** inverse cons)
